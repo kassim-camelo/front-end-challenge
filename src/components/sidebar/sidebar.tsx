@@ -1,13 +1,14 @@
 import { Container } from "@mui/material";
 
-import { HomeIcon, ListItemStyled, ListStyled, MainBox, SearchIcon, Text } from './sidebarStyled';
+import Spotify from '../../assets/spotify-logo.png';
+import { HomeIcon, ListItemStyled, ListStyled, Logo, MainBox, SearchIcon, Text } from './sidebarStyled';
 
 function Sidebar() {
     return (
         <>
             <Container maxWidth="sm">
                 <MainBox>
-                    <img style={{marginTop: '1.5rem', marginLeft:'1.5rem', objectFit:'cover', height:'1.75rem'}} src='/spotify-logo.png' alt='Spotify Logo' />
+                    <Logo src={Spotify} alt='Spotify Logo' />
                     <ListStyled>
                         <ListItemStyled>
                             <HomeIcon />

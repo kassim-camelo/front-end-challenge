@@ -10,6 +10,12 @@ export const MainBox = styled(Box)`
     margin-top: 5px;
 `;
 
+export const Logo = styled.img`
+    width: 100px;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+`;
+
 export const ListStyled = styled(List)`
     margin-left: 0.5rem;
 `;

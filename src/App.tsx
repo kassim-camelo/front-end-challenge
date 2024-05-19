@@ -7,7 +7,7 @@ import Sidebar from "./components/sidebar/sidebar"
 
 function App() {
   return (
-    <Box sx={{ bgcolor: 'black', maxHeight: '100vh', minHeight: '100vh' }}>
+    <Box sx={{ bgcolor: 'black', maxHeight: '100vh', minHeight: '100vh', overflow: 'hidden' }}>
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
         <Box>

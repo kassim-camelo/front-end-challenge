@@ -1,0 +1,34 @@
+{
+    "podcasts": [
+        {
+            "name": "Podpah",
+            "image": "https://i.scdn.co/image/ab67656300005f1fda018f5c18ecebc5d3ff3b59",
+            "studio": "Podpah"
+        },
+        {
+            "name": "Café da Manhã",
+            "image": "https://i.scdn.co/image/ab67656300005f1f81d91fac14f330789c39ed1c",
+            "studio": "Spotify Studios"
+        },
+        {
+            "name": "França e o Labirinto",
+            "image": "https://i.scdn.co/image/ab67656300005f1f09a5458de40b93c84eb60db1",
+            "studio": "Spotify Studios"
+        },
+        {
+            "name": "123 Segundos",
+            "image": "https://i.scdn.co/image/ab67656300005f1f32c21fc17cdd51f89c0922c1",
+            "studio": "Spotify Studios"
+        },
+        {
+            "name": "Mano a Mano",
+            "image": "https://i.scdn.co/image/ab67656300005f1f1420763344518f881879a910",
+            "studio": "Spotify Studios"
+        },
+        {
+            "name": "Matando Robôs Gigantes",
+            "image": "https://i.scdn.co/image/ab67656300005f1f1a3579d894141338e90b87d6",
+            "studio": "Matando Robôs Gigantes"
+        }
+    ]
+}

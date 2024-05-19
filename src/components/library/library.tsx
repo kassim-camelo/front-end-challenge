@@ -39,14 +39,14 @@ function Library() {
                 </div>
                 <Box component='section' sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', paddingBottom: '2rem'}}>
                     <LibraryFooter>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Legal</LibraryFooterText>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Segurança e Centro de privacidade</LibraryFooterText>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Política de privacidade</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Legal</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Segurança e Centro de privacidade</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Política de privacidade</LibraryFooterText>
                     </LibraryFooter>
                     <LibraryFooter>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Cookies</LibraryFooterText>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Sobre anúncios</LibraryFooterText>
-                        <LibraryFooterText component='a' href='/' variant="caption" sx={{ color: '#b3b3b3'}}>Acessibilidade</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Cookies</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Sobre anúncios</LibraryFooterText>
+                        <LibraryFooterText variant="caption">Acessibilidade</LibraryFooterText>
                     </LibraryFooter>
                     <LanguageButton>
                         <LanguageOutlinedIcon sx={{marginRight: '5px'}} /> Português do Brasil

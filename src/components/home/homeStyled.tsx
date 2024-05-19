@@ -2,12 +2,11 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
 export const HomeContainer = styled(Box)`
-    min-width: 1300px;
+    min-width: 1310px;
     background-color: #1e1e1e;
-    border: 1px solid red;
     border-radius: 1rem;
     color: white;
-    min-height: 100%;
+    min-height: 98%;
 `;
 
 export const HomeNavbar = styled(Box)`

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
+import { styled as muiStyled } from "@mui/material";
 import { Box, ButtonBase, Typography } from "@mui/material";
 
 export const LibraryHeader = styled(Box)`
@@ -68,12 +69,12 @@ export const LibraryFooter = styled(Box)`
     margin-left: 1.5rem;
 `;
 
-export const LibraryFooterText = styled(Typography)`
-    color: #b3b3b3;
-    text-decoration: none;
-    margin-right: 45px;
-    margin-bottom: 0.75rem;
-`;
+export const LibraryFooterText = muiStyled(Typography)({
+    color: '#b3b3b3',
+    textDecoration: 'none',
+    marginRight: '45px',
+    marginBottom: '0.75rem'
+});
 
 export const LanguageButton = styled(ButtonBase)`
     margin-left: 1.5rem;

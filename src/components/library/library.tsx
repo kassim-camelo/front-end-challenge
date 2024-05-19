@@ -1,12 +1,12 @@
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import { CardText, LanguageButton, LibaryButton, LibraryCard, LibraryFooter, LibraryFooterText, LibraryHeader, PlaylistIcon, PlusIcon, TextContainer } from './libraryStyled';
 
 function Library() {
     return (
-        <Container maxWidth='sm' sx={{ minWidth: '600px'}}>
-            <Box sx={{ bgcolor: '#121212', height: '650px', borderRadius: '1rem', marginTop: '5px', marginBottom: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+        <Container maxWidth='sm' sx={{ minWidth: '600px', padding: '0.25rem 0.75rem'}} disableGutters>
+            <Box sx={{ bgcolor: '#121212', height: '665px', borderRadius: '1rem', marginTop: '5px', marginBottom: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                 <div>
                     <LibraryHeader>
                         <Box sx={{display: 'flex', alignItems: 'center', paddingTop:'1.25rem', paddingLeft: '1.25rem'}}>

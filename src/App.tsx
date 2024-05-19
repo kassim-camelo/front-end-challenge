@@ -1,6 +1,6 @@
 import { Box, CssBaseline } from "@mui/material"
 
-import Banner from "./components/footer/footer"
+import Banner from "./components/banner/banner"
 import Home from "./components/home/home"
 import Library from "./components/library/library"
 import Sidebar from "./components/sidebar/sidebar"

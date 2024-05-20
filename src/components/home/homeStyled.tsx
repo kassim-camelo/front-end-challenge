@@ -41,7 +41,7 @@ export const LoginButton = styled(ButtonBase)`
 
 export const HomeContainer = styled(Box)`
     max-width: 1470px;
-    background-color: #1e1e1e;
+    background-color: #121212;
     border-radius: 1rem;
     color: white;
     max-height: 905px;

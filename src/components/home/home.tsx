@@ -1,14 +1,14 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { useEffect, useState } from 'react';
 
 import { HomeContainer, HomeNavbar, LoginButton, NavbarContainerLeft, NavbarContainerRight, SubscribeText } from './homeStyled';
-import TopArtists from './sections/topArtists';
-import { useEffect, useState } from 'react';
-import { Artist } from './sections/topArtists';
-import TopPodcasts, { Podcast } from './sections/topPodcasts';
 import TopAlbums, { Album } from './sections/topAlbums';
-import TopRadios, { Radio } from './sections/topRadios';
+import TopArtists from './sections/topArtists';
+import { Artist } from './sections/topArtists';
 import TopPlaylists, { Playlist } from './sections/topPlaylists';
+import TopPodcasts, { Podcast } from './sections/topPodcasts';
+import TopRadios, { Radio } from './sections/topRadios';
 
 const Home = () => {
     const [data, setData] = useState({

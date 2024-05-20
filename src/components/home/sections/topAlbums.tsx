@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Box, Typography } from "@mui/material"
 
 export interface Album {
@@ -6,22 +7,66 @@ export interface Album {
     image: string
 }
 
-const Album = ({name, image, artist}: Album) => (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <img src={image} alt={name} />
-        <Typography variant='body2'>{name}</Typography>
-        <Typography variant='caption'>{artist}</Typography>
-    </Box>
-)
+const AlbumContainer = styled(Box)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    &:hover {
+        background-color: #1f1f1f;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+`;
+
+const Title = styled(Typography)`
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    //margin-top: 1rem;
+`;
+
+const AlbumImage = styled.img`
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    margin: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0px 0px 20px 0px #00000090;
+    transform: scale(1.1);
+`;
+
+const AlbumArtist = styled(Typography)`
+    padding-top: 0.5rem;
+    letter-spacing: 0.05rem;
+    color: #a7a7a7;
+    font-weight: bold;
+`;
+
+const AlbumName = styled(Typography)`
+    padding-top: 0.75rem;
+    letter-spacing: 0.05rem;
+`;
+
+const Album = ({name, image, artist}: Album) => {
+    const filteredName = name.length > 20 ? name.substring(0, 20) + "..." : name;
+    return (
+    <AlbumContainer>
+        <AlbumImage src={image} alt={name} />
+        <Box sx={{ width: '100%', position: 'relative' }}>
+            <AlbumName variant='body2'>{filteredName}</AlbumName>
+            <AlbumArtist variant='caption'>{artist}</AlbumArtist>
+        </Box>
+    </AlbumContainer>
+)}
 
 const TopAlbums = ({albums}: {albums: Album[]}) => {
     return(
-        <>
-            <Typography variant='h6'>Álbuns Populares</Typography>
+        <Box sx={{padding: '1rem'}}>
+            <Title variant='h5'>Álbuns Populares</Title>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 {albums.map((album) => <Album name={album.name} image={album.image} artist={album.artist} />)}
             </Box>
-        </>
+        </Box>
     )
 }
 

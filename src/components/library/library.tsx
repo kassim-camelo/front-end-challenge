@@ -49,7 +49,7 @@ function Library() {
                         <LibraryFooterText variant="caption">Acessibilidade</LibraryFooterText>
                     </LibraryFooter>
                     <LanguageButton>
-                        <LanguageOutlinedIcon sx={{marginRight: '5px'}} /> Português do Brasil
+                        <LanguageOutlinedIcon sx={{marginRight: '5px'}} /> <strong>Português do Brasil</strong>
                     </LanguageButton>
                 </Box>
             </Box>

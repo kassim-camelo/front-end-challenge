@@ -84,13 +84,13 @@ export const LibraryFooterText = muiStyled(Typography)({
 
 export const LanguageButton = styled(ButtonBase)`
     margin-left: 1.5rem;
-    border: 1px solid #b3b3b3;
+    border: 1px solid #727272;
     color: white;
     border-radius: 1rem;
-    padding: 0.3rem;
+    padding: 0.25rem 0.5rem;
     margin-top: 25px;
     width: 175px;
-    font-weight: 700;
+    font-weight: lighter;
     &:hover{
         border: 1px solid white;
         transform: scale(1.03);

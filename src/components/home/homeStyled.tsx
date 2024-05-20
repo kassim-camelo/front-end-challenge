@@ -51,7 +51,7 @@ export const HomeContainer = styled(Box)`
         width: 12px;
     }
     ::-webkit-scrollbar-track {
-        background: #1e1e1e;
+        background: #1e1e1e00;
     }
     ::-webkit-scrollbar-thumb {
         background: #555;

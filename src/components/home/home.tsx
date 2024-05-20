@@ -1,31 +1,49 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
-import { Button, Typography } from "@mui/material";
 
-import { HomeContainer, HomeNavbar } from './homeStyled';
+import { HomeContainer, HomeNavbar, LoginButton, NavbarContainerLeft, NavbarContainerRight, SubscribeText } from './homeStyled';
 import TopArtists from './sections/topArtists';
 import { useEffect, useState } from 'react';
 import { Artist } from './sections/topArtists';
+import TopPodcasts, { Podcast } from './sections/topPodcasts';
+import TopAlbums, { Album } from './sections/topAlbums';
+import TopRadios, { Radio } from './sections/topRadios';
+import TopPlaylists, { Playlist } from './sections/topPlaylists';
 
 const Home = () => {
-    const [artists, setArtists] = useState([] as Artist[]);
+    const [data, setData] = useState({
+        artists: [] as Artist[],
+        albums: [] as Album[],
+        stations: [] as Radio[],
+        playlists: [] as Playlist[],
+        podcasts: [] as Podcast[]
+    });
 
     useEffect(() => {
-        fetch('./artists.json').then(response => response.json()).then(data => setArtists(data["artists"] as Artist[])).catch(err => console.error(err));
+        fetch('./artists.json').then(response => response.json()).then(data => setData(prevState => ({...prevState, artists: data["artists"]}))).catch(err => console.error(err));
+        fetch('./albums.json').then(response => response.json()).then(data => setData(prevState => ({...prevState, albums: data["albums"]}))).catch(err => console.error(err));
+        fetch('./radio.json').then(response => response.json()).then(data => setData(prevState => ({...prevState, stations: data["radio"]}))).catch(err => console.error(err));
+        fetch('./playlists.json').then(response => response.json()).then(data => setData(prevState => ({...prevState, playlists: data["playlists"]}))).catch(err => console.error(err));
+        fetch('./podcasts.json').then(response => response.json()).then(data => setData(prevState => ({...prevState, podcasts: data["podcasts"]}))).catch(err => console.error(err));
     }, []);
+
     return (
         <HomeContainer sx={{my: '0.5rem'}}>
             <HomeNavbar>
-                <div>
-                    <ArrowBackIosNewOutlinedIcon />
-                    <ArrowForwardIosOutlinedIcon />
-                </div>
-                <div>
-                    <Typography variant='h6'>Inscreva-se</Typography>
-                    <Button variant='contained'>Entrar</Button>
-                </div>
+                <NavbarContainerLeft>
+                    <ArrowBackIosNewOutlinedIcon sx={{height: '35px', width: '35px', padding: '0.5rem', backgroundColor: '#090909', borderRadius: '4rem', marginRight: '10px', color: '#929292'}} />
+                    <ArrowForwardIosOutlinedIcon sx={{height: '35px', width: '35px', padding: '0.5rem', backgroundColor: '#090909', borderRadius: '4rem', color: '#929292'}} />
+                </NavbarContainerLeft>
+                <NavbarContainerRight>
+                    <SubscribeText variant='h6'>Inscrever-se</SubscribeText>
+                    <LoginButton>Entrar</LoginButton>
+                </NavbarContainerRight>
             </HomeNavbar>
-            <TopArtists artists={artists}/>
+            <TopArtists artists={data.artists}/>
+            <TopAlbums albums={data.albums}/>
+            <TopRadios radios={data.stations}/>
+            <TopPlaylists playlists={data.playlists}/>
+            <TopPodcasts  podcasts={data.podcasts}/>
         </HomeContainer>
     );
 }

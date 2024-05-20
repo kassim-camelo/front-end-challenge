@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Box, Typography } from "@mui/material";
 
 export interface Artist {
@@ -5,12 +6,30 @@ export interface Artist {
     image: string
 }
 
+const ArtistImage = styled.img`
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    margin: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0px 0px 20px 0px #00000090;
+`;
+
+const ArtistContainer = styled(Box)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+`;
+
 const Artist = ({name, image}: Artist) => (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <img src={image} alt={name} />
-        <Typography variant='body2'>{name}</Typography>
-        <Typography variant='caption'>Artista</Typography>
-    </Box>
+    <ArtistContainer>
+        <ArtistImage src={image} alt={name} />
+        <Box sx={{ width: '100%' }}>
+            <Typography variant='body2'>{name}</Typography>
+            <Typography variant='caption'>Artista</Typography>
+        </Box>
+    </ArtistContainer>
 )
 
 const TopArtists = ({artists}: {artists: Artist[]}) => {

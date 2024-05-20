@@ -8,6 +8,7 @@ export const LibraryHeader = styled(Box)`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
 `;
 
 export const LibraryCard = styled(Box)`
@@ -16,7 +17,7 @@ export const LibraryCard = styled(Box)`
     justify-content: center;
     background-color: #242424;
     padding: 1rem;
-    margin: 1.75rem 0.75rem;
+    margin: 0.5rem 0.75rem;
     border-radius: 0.5rem;
 `;
 
@@ -30,13 +31,13 @@ export const CardText = styled(Typography)`
 `;
 
 export const PlaylistIcon = styled(PlaylistAddCheckOutlinedIcon)`
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     color: #b3b3b3;
     margin-right: 0.75rem;
 `;
 
 export const PlusIcon = styled(AddOutlinedIcon)`
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-right: 1.5rem;
     margin-top: 1rem;
     color: #b3b3b3;
@@ -72,8 +73,13 @@ export const LibraryFooter = styled(Box)`
 export const LibraryFooterText = muiStyled(Typography)({
     color: '#b3b3b3',
     textDecoration: 'none',
-    marginRight: '45px',
-    marginBottom: '0.75rem'
+    marginBottom: '0.75rem',
+    marginRight: '1rem',
+    minWidth: '10%',
+    fontSize: '0.65rem',
+    ":hover":{
+        cursor: 'pointer',
+    }
 });
 
 export const LanguageButton = styled(ButtonBase)`

@@ -5,14 +5,14 @@ import { Box, List, ListItem, Typography } from "@mui/material";
 
 export const MainBox = styled(Box)`
     background-color: #121212;
-    height: 200px;
-    border-radius: 1rem;
+    height: 150px;
+    border-radius: 0.75rem;
     margin-top: 5px;
 `;
 
 export const Logo = styled.img`
-    width: 100px;
-    margin-top: 1.5rem;
+    width: 75px;
+    margin-top: 1.25rem;
     margin-left: 1.5rem;
 `;
 
@@ -22,7 +22,6 @@ export const ListStyled = styled(List)`
 
 export const ListItemStyled = styled(ListItem)`
     color: #b3b3b3;
-    margin-top: 0.5rem;
     transition: 0.3s;
     &:hover{
         color: white;
@@ -31,18 +30,18 @@ export const ListItemStyled = styled(ListItem)`
 `;
 
 export const HomeIcon = styled(HomeOutlinedIcon)<{isTrue?: boolean}>`
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: ${props => props.isTrue ? 'white' : ''};
 `;
 
 export const SearchIcon = styled(SearchOutlinedIcon)<{isTrue?: boolean}>`
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: ${props => props.isTrue ? 'white' : ''};
 `;
 
 export const Text = styled(Typography)<{isTrue?: boolean}>`
     margin-left: 1.25rem;
     font-weight: 500;
-    font-size: large;
+    font-size: medium;
     color: ${props => props.isTrue ? 'white' : ''};
 `;

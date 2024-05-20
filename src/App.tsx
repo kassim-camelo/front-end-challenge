@@ -7,19 +7,19 @@ import Sidebar from "./components/sidebar/sidebar"
 
 function App() {
   return (
-    <Box sx={{ bgcolor: 'black', maxHeight: '100vh', minHeight: '100vh', overflow: 'hidden' }}>
-      <CssBaseline />
-      <Box sx={{ display: 'flex' }}>
-        <Box>
-          <Sidebar />
-          <Library />
+      <Box sx={{ bgcolor: 'black', maxHeight: '100vh', minHeight: '100vh' }}>
+        <CssBaseline />
+        <Box sx={{ display: 'flex' }}>
+          <Box sx={{ maxWidth: '450px' }}>
+            <Sidebar />
+            <Library />
+          </Box>
+          <Box>
+            <Home />
+          </Box>
         </Box>
-        <Box>
-          <Home />
-        </Box>
+        <Banner />
       </Box>
-      <Banner />
-    </Box>
   )
 }
 

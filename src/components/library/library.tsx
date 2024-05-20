@@ -5,12 +5,12 @@ import { CardText, LanguageButton, LibaryButton, LibraryCard, LibraryFooter, Lib
 
 function Library() {
     return (
-        <Container maxWidth='sm' sx={{ minWidth: '600px', padding: '0.25rem 0.75rem'}} disableGutters>
-            <Box sx={{ bgcolor: '#121212', height: '665px', borderRadius: '1rem', marginTop: '5px', marginBottom: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+        <Container maxWidth='sm' sx={{ minWidth: '400px', padding: '0rem 0.5rem'}} disableGutters>
+            <Box sx={{ bgcolor: '#121212', height: '750px', borderRadius: '1rem', marginTop: '5px', marginBottom: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                 <div>
                     <LibraryHeader>
-                        <Box sx={{display: 'flex', alignItems: 'center', paddingTop:'1.25rem', paddingLeft: '1.25rem'}}>
-                            <PlaylistIcon /><Typography variant='h6' sx={{ color: '#b3b3b3'}}>Sua Biblioteca</Typography>
+                        <Box sx={{display: 'flex', alignItems: 'center', paddingTop:'0.75rem', paddingLeft: '1.25rem', width: '100%'}}>
+                            <PlaylistIcon /><Typography variant='body1' sx={{ color: '#b3b3b3' }}><strong>Sua Biblioteca</strong></Typography>
                         </Box>
                         <Box sx={{display: 'flex', justifyContent: 'right', alignItems: 'center', width: '340px'}}>
                             <PlusIcon />
@@ -26,7 +26,7 @@ function Library() {
                                 Criar playlist
                             </LibaryButton>
                         </LibraryCard>
-                        <LibraryCard component='section'>
+                        <LibraryCard component='section' sx={{ marginTop: '1.5rem !important' }}>
                             <TextContainer>
                                 <CardText variant='subtitle2' sx={{fontSize: '1rem'}}>Que tal seguir um podcast novo?</CardText>
                                 <CardText variant='body1' sx={{fontSize: '0.825rem'}}>Avisaremos você sobre novos episódios.</CardText>

@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 import { Box, Typography } from "@mui/material";
+import { useState } from "react";
 
 export interface Radio {
     title: string,
@@ -22,6 +24,7 @@ const RadioContainer = styled(Box)`
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
+    //margin-right: 5px;
     &:hover {
         background-color: #1f1f1f;
         border-radius: 0.5rem;
@@ -43,27 +46,47 @@ const RadioName = styled(Typography)`
 const RadioSubtitle = styled(Typography)`
     padding-top: 0.5rem;
     letter-spacing: 0.05rem;
+    max-width: 216px;
     color: #a7a7a7;
     font-weight: bold;
 `;
 
+const PlayButton = styled.div<{ isVisible: boolean}>`
+    opacity: ${(props) => props.isVisible ? 1 : 0};
+    visibility: ${(props) => props.isVisible ? 'visible' : 'hidden'};
+    transform: ${(props) => props.isVisible ? 'translateY(0)' : 'translateY(10px)'};
+    background-color: black;
+    color: #1ed760;
+    max-width: 25px;
+    border-radius: 4rem;
+    position: absolute;
+    right: 15px;
+    bottom: 90px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 20px 0px #00000090;
+`;
+
 const Radio = ({title, image, subtitle}: Radio) => {
+    const [isHovered, setIsHovered] = useState(false);
     const filteredSub = subtitle.length > 40 ? subtitle.substring(0, 40) + "..." : subtitle;
     return (
-    <RadioContainer>
+    <RadioContainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <RadioImage src={image} alt={title} />
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', position: 'relative', maxWidth: '216px'  }}>
             <RadioName variant='body2'>{title}</RadioName>
             <RadioSubtitle variant='caption'>{filteredSub}</RadioSubtitle>
+            <PlayButton isVisible={isHovered}>
+                <PlayCircleFilledOutlinedIcon sx={{transform: 'scale(2)'}}/>
+            </PlayButton>
         </Box>
     </RadioContainer>
 )}
 
 const TopRadios = ({radios}: {radios: Radio[]}) => {
     return(
-        <Box sx={{padding: '1rem'}}>
-            <Title variant='h5'>Estações de rádio Populares</Title>
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <Box sx={{padding: '1rem' }}>
+            <Title variant='h5'>Estações de rádio populares</Title>
+            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 {radios.map((radio) => <Radio title={radio.title} image={radio.image} subtitle={radio.subtitle} />)}
             </Box>
         </Box>

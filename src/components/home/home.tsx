@@ -1,8 +1,9 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
-import { HomeContainer, HomeNavbar, LoginButton, NavbarContainerLeft, NavbarContainerRight, SubscribeText } from './homeStyled';
+import { Facebook, FooterList, HomeContainer, HomeNavbar, Instagram, Item, ListTitle, LoginButton, NavbarContainerLeft, NavbarContainerRight, SubscribeText, Twitter } from './homeStyled';
 import TopAlbums, { Album } from './sections/topAlbums';
 import TopArtists from './sections/topArtists';
 import { Artist } from './sections/topArtists';
@@ -44,6 +45,43 @@ const Home = () => {
             <TopRadios radios={data.stations}/>
             <TopPlaylists playlists={data.playlists}/>
             <TopPodcasts  podcasts={data.podcasts}/>
+            <footer style={{ display: 'flex', justifyContent: 'space-between', margin: '2rem', borderBottom: '1px solid #2a2a2a'}}>
+                <div style={{display: 'flex'}}>
+                    <FooterList>
+                        <ListTitle variant='caption'>Empresa</ListTitle>
+                        <Item>Sobre</Item>
+                        <Item>Empregos</Item>
+                        <Item>For the Record</Item>
+                    </FooterList>
+                    <FooterList>
+                        <ListTitle variant='caption'>Comunidades</ListTitle>
+                        <Item>Para Artistas</Item>
+                        <Item>Desenvolvedores</Item>
+                        <Item>Publicidade</Item>
+                        <Item>Investidores</Item>
+                        <Item>Fornecedores</Item>
+                    </FooterList>
+                    <FooterList>
+                        <ListTitle variant='caption'>Links úteis</ListTitle>
+                        <Item>Suporte</Item>
+                        <Item>Aplicativo móvel grátis</Item>
+                    </FooterList>
+                    <FooterList>
+                        <ListTitle variant='caption'>Planos do Spotify</ListTitle>
+                        <Item>Premium Individual</Item>
+                        <Item>Premium Duo</Item>
+                        <Item>Premium Família</Item>
+                        <Item>Premium Universitário</Item>
+                        <Item>Spotify Free</Item>
+                    </FooterList>
+                </div>
+                <div>
+                    <Instagram />
+                    <Twitter />
+                    <Facebook />
+                </div>
+            </footer>
+            <Typography variant='caption' sx={{textAlign: 'center', color: '#929292', mx: '2rem', paddingBottom: '5rem'}}>© 2024 Spotify AB</Typography>
         </HomeContainer>
     );
 }

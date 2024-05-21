@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, ButtonBase, Typography } from "@mui/material";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import { Box, ButtonBase, List, ListItem, Typography } from "@mui/material";
 
 export const NavbarContainerLeft = styled(Box)`
     width: 50%;
@@ -70,4 +73,69 @@ export const HomeNavbar = styled(Box)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+`;
+
+export const FooterList = styled(List)`
+    margin-right: 5rem;
+    margin-bottom: 25px;
+    min-width: 200px;
+`;
+
+export const ListTitle = styled(Typography)`
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 0.5rem;
+`;
+
+export const Item = styled(ListItem)`
+    color: #a7a7a7;
+    padding: 0;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.1rem !important;
+    &:hover{
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
+
+export const Facebook = styled(FacebookOutlinedIcon)`
+    height: 40px;
+    width: 40px;
+    padding: 0.75rem;
+    border-radius: 100%;
+    margin-right: 0.75rem;
+    background-color: #292929;
+    &:hover{
+        background-color: #808080;
+        cursor: pointer;
+    }
+`;
+
+export const Instagram = styled(InstagramIcon)`
+    height: 40px;
+    width: 40px;
+    padding: 0.75rem;
+    border-radius: 100%;
+    margin-right: 0.75rem;
+    background-color: #292929;
+    &:hover{
+        background-color: #808080;
+        cursor: pointer;
+    }
+`;
+
+export const Twitter = styled(TwitterIcon)`
+    height: 40px;
+    width: 40px;
+    padding: 0.75rem;
+    border-radius: 100%;
+    margin-right: 0.75rem;
+    background-color: #292929;
+    &:hover{
+        background-color: #808080;
+        cursor: pointer;
+    }
 `;

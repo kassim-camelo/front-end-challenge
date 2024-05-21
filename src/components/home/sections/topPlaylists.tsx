@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 import { Box, Typography } from "@mui/material"
+import { useState } from "react";
 
 export interface Playlist {
     name: string,
@@ -47,14 +49,33 @@ const PlaylistDescription = styled(Typography)`
     font-weight: bold;
 `;
 
-const Playlist = ({name, image, description}: Playlist) =>{
+const PlayButton = styled.div<{ isVisible: boolean}>`
+    opacity: ${(props) => props.isVisible ? 1 : 0};
+    visibility: ${(props) => props.isVisible ? 'visible' : 'hidden'};
+    transform: ${(props) => props.isVisible ? 'translateY(0)' : 'translateY(10px)'};
+    background-color: black;
+    color: #1ed760;
+    max-width: 25px;
+    border-radius: 4rem;
+    position: absolute;
+    right: 15px;
+    bottom: 70px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 20px 0px #00000090;
+`;
+
+const Playlist = ({name, image, description}: Playlist) => {
+    const [isHovered, setIsHovered] = useState(false);
     const filteredDesc = description.length > 30 ? description.substring(0, 30) + "..." : description;
     return (
-    <PlaylistContainer>
+    <PlaylistContainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <PlaylistImage src={image} alt={name} />
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', position: 'relative' }}>
             <PlaylistName variant='body2'>{name}</PlaylistName>
             <PlaylistDescription variant='caption'>{filteredDesc}</PlaylistDescription>
+            <PlayButton isVisible={isHovered}>
+                <PlayCircleFilledOutlinedIcon sx={{transform: 'scale(2)'}}/>
+            </PlayButton>
         </Box>
     </PlaylistContainer>
 )}

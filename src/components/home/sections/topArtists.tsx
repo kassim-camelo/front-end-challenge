@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 import { Box, Typography } from "@mui/material";
+import { useState } from "react";
 
 export interface Artist {
     name: string,
@@ -22,6 +23,7 @@ const ArtistContainer = styled(Box)`
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
+    margin-left: 5px;
     &:hover {
         background-color: #1f1f1f;
         border-radius: 0.5rem;
@@ -29,8 +31,10 @@ const ArtistContainer = styled(Box)`
     }
 `;
 
-const PlayButton = styled.div`
-    display: flex;
+const PlayButton = styled.div<{ isVisible: boolean}>`
+    opacity: ${(props) => props.isVisible ? 1 : 0};
+    visibility: ${(props) => props.isVisible ? 'visible' : 'hidden'};
+    transform: ${(props) => props.isVisible ? 'translateY(0)' : 'translateY(10px)'};
     background-color: black;
     color: #1ed760;
     max-width: 25px;
@@ -38,6 +42,8 @@ const PlayButton = styled.div`
     position: absolute;
     right: 25px;
     bottom: 70px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 20px 0px #00000090;
 `;
 
 const Title = styled(Typography)`
@@ -57,18 +63,20 @@ const ArtistCaption = styled(Typography)`
     font-weight: bold;
 `;
 
-const Artist = ({name, image}: Artist) => (
-    <ArtistContainer>
+const Artist = ({name, image}: Artist) => {
+    const [isHovered, setIsHovered] = useState(false);
+    return(
+    <ArtistContainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <ArtistImage src={image} alt={name} />
         <Box sx={{ width: '100%', position: 'relative' }}>
             <ArtistName variant='body2'>{name}</ArtistName>
             <ArtistCaption variant='caption'>Artista</ArtistCaption>
-            <PlayButton>
+            <PlayButton isVisible={isHovered}>
                 <PlayCircleFilledOutlinedIcon sx={{transform: 'scale(2)'}}/>
             </PlayButton>
         </Box>
     </ArtistContainer>
-)
+)}
 
 const TopArtists = ({artists}: {artists: Artist[]}) => {
     return(

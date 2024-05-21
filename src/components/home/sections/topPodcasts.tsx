@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 import { Box, Typography } from "@mui/material";
+import { useState } from "react";
 
 export interface Podcast {
     name: string,
@@ -47,15 +49,36 @@ const PodcastDescription = styled(Typography)`
     font-weight: bold;
 `;
 
-const Podcast = ({name, image, studio}: Podcast) => (
-    <PodcastContainer>
+const PlayButton = styled.div<{ isVisible: boolean}>`
+    opacity: ${(props) => props.isVisible ? 1 : 0};
+    visibility: ${(props) => props.isVisible ? 'visible' : 'hidden'};
+    transform: ${(props) => props.isVisible ? 'translateY(0)' : 'translateY(10px)'};
+    background-color: black;
+    color: #1ed760;
+    max-width: 25px;
+    border-radius: 4rem;
+    position: absolute;
+    right: 15px;
+    bottom: 70px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 20px 0px #00000090;
+`;
+
+const Podcast = ({name, image, studio}: Podcast) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return(
+    <PodcastContainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <PodcastImage src={image} alt={name} />
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', position: 'relative' }}>
             <PodcastName variant='body2'>{name}</PodcastName>
             <PodcastDescription variant='caption'>{studio}</PodcastDescription>
+            <PlayButton isVisible={isHovered}>
+                <PlayCircleFilledOutlinedIcon sx={{transform: 'scale(2)'}}/>
+            </PlayButton>
         </Box>
     </PodcastContainer>
-)
+)}
 
 const TopPodcasts = ({podcasts}: {podcasts: Podcast[]}) => {
     return(

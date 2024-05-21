@@ -44,7 +44,8 @@ export const PlusIcon = styled(AddOutlinedIcon)`
     border-radius: 4rem;
     transition: 0.2s;
     &:hover{
-        background-color: #41414190;
+        background-color: #4d4d4d90;
+        cursor: pointer;
     }
 `;
 

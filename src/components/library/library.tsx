@@ -1,11 +1,19 @@
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import { Box, Container, Typography } from "@mui/material";
+import { useState } from 'react';
 
+import LanguageModal from '../modal/language';
 import { CardText, LanguageButton, LibaryButton, LibraryCard, LibraryFooter, LibraryFooterText, LibraryHeader, PlaylistIcon, PlusIcon, TextContainer } from './libraryStyled';
 
 function Library() {
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return (
         <Container maxWidth='sm' sx={{ minWidth: '400px', padding: '0rem 0.5rem'}} disableGutters>
+            <LanguageModal open={open} onClose={handleClose} />
             <Box sx={{ bgcolor: '#121212', height: '750px', borderRadius: '1rem', marginTop: '5px', marginBottom: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                 <div>
                     <LibraryHeader>
@@ -48,7 +56,7 @@ function Library() {
                         <LibraryFooterText variant="caption">Sobre anúncios</LibraryFooterText>
                         <LibraryFooterText variant="caption">Acessibilidade</LibraryFooterText>
                     </LibraryFooter>
-                    <LanguageButton>
+                    <LanguageButton onClick={handleOpen}>
                         <LanguageOutlinedIcon sx={{marginRight: '5px'}} /> <strong>Português do Brasil</strong>
                     </LanguageButton>
                 </Box>

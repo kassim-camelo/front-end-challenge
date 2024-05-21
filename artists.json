@@ -1,0 +1,28 @@
+{
+    "artists": [
+        {
+            "name": "Zé Neto & Cristiano",
+            "image": "https://i.scdn.co/image/ab67616100005174d3332d80d4e5ea58423e50a9"
+        },
+        {
+            "name": "Henrique & Juliano",
+            "image": "https://i.scdn.co/image/ab67616100005174b713c619cc12ca1866136419"
+        },
+        {
+            "name": "Jorge & Mateus",
+            "image": "https://i.scdn.co/image/ab67616100005174242a8ef8cfdde955f7067581"
+        },
+        {
+            "name": "Matheus & Kauan",
+            "image": "https://i.scdn.co/image/ab67616100005174ff2a2232c16593087e851ff4"
+        },
+        {
+            "name": "Ana Castela",
+            "image": "https://i.scdn.co/image/ab6761610000517426abde7ba3cfdfb8c1900baf"
+        },
+        {
+            "name": "Luan Pereira",
+            "image": "https://i.scdn.co/image/ab67616100005174f69e0f56f8484cd601b23993"
+        }
+    ]
+}

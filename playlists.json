@@ -1,0 +1,34 @@
+{
+    "playlists": [
+        {
+            "name": "Chillout Lounge",
+            "image": "https://i.scdn.co/image/ab67706f00000002dec17246891b5b4eb97bdb0d",
+            "description": "Just lean back and enjoy relaxed beats"
+        },
+        {
+            "name": "All Out 2020s",
+            "image": "https://i.scdn.co/image/ab67706f00000002baed3d65fac432ea1f7f7cd0",
+            "description": "The biggest songs of the 2020s"
+        },
+        {
+            "name": "lofi beats",
+            "image": "https://i.scdn.co/image/ab67706f0000000254473de875fea0fd19d39037",
+            "description": "chill beats, lofi vibes, new tracks every week..."
+        },
+        {
+            "name": "Today's Top Hits",
+            "image": "https://i.scdn.co/image/ab67706f00000002cca735c650a50d8ba864fca6",
+            "description": "Billie Eilish is on top of the Hottest 50!"
+        },
+        {
+            "name": "Jazz in the Background",
+            "image": "https://i.scdn.co/image/ab67706f00000002bdeb1c317ac2dd10f2397e4c",
+            "description": "Soft instrumental Jazz for all your activities"
+        },
+        {
+            "name": "All Out 80s",
+            "image": "https://i.scdn.co/image/ab67706f00000002fe154a455809e72e4d854880",
+            "description": "The biggest songs of the 1980s. Cover: Bonnie Tyler."
+        }
+    ]
+}

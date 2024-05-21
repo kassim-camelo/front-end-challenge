@@ -1,30 +1,113 @@
-# React + TypeScript + Vite
+# Desafio de Front-end para Vaga de Bolsista
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um desafio de front-end para a vaga de bolsista. O objetivo é criar uma página SPA (Single Page Application) semelhante ao webplayer do Spotify (fora da sessão de usuário), utilizando dados mockados de um backend.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Typescript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Material-UI](https://mui.com/)
+- [Emotion CSS](https://emotion.sh/docs/introduction)
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
 
-- Configure the top-level `parserOptions` property like this:
+## Instalação
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Clone o repositório:
+    ```sh
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    ```
+
+2. Navegue até o diretório do projeto:
+    ```sh
+    cd seu-repositorio
+    ```
+
+3. Instale as dependências:
+    ```sh
+    npm install
+    ```
+    ou, se você estiver usando Yarn:
+    ```sh
+    yarn
+    ```
+
+## Execução
+
+Para iniciar o servidor de desenvolvimento, execute o comando:
+
+```sh
+npm run dev
+```
+ou, se você estiver usando Yarn:
+
+```sh
+yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+O servidor de desenvolvimento estará disponível em http://localhost:3000.
+
+## Build para Produção
+Para compilar o projeto para produção, execute o comando:
+
+```sh
+npm run build
+```
+
+ou, se você estiver usando Yarn:
+
+```sh
+yarn build
+```
+
+Os arquivos compilados estarão na pasta dist.
+
+## Servir a Build
+Para servir a build compilada localmente, você pode usar o comando:
+
+```sh
+npm run serve
+```
+
+ou, se você estiver usando Yarn:
+
+```sh
+yarn serve
+```
+
+## Estrutura do Projeto
+
+```sh
+seu-repositorio/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── styles/
+│   ├── App.tsx
+│   └── index.tsx
+├── .gitignore
+├── index.html
+├── package.json
+├── README.md
+└── tsconfig.json
+```
+
+## Contribuindo
+Se você deseja contribuir com o projeto, por favor, siga estas diretrizes:
+Faça um fork do repositório.
+Crie uma branch para sua feature ou correção:
+```sh
+git checkout -b minha-nova-feature
+```
+Faça o commit das suas alterações:
+```sh
+git commit -m 'Adiciona nova feature'
+```
+Envie para a branch original:
+```sh
+git push origin minha-nova-feature
+```

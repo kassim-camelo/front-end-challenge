@@ -47,7 +47,7 @@ ou, se você estiver usando Yarn:
 yarn dev
 ```
 
-O servidor de desenvolvimento estará disponível em http://localhost:3000.
+O servidor de desenvolvimento estará disponível em http://localhost:5173/.
 
 ## Build para Produção
 Para compilar o projeto para produção, execute o comando:

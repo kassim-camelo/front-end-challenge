@@ -22,7 +22,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
 
 2. Navegue até o diretório do projeto:
     ```sh
-    cd seu-repositorio
+    cd front-end-challenge
     ```
 
 3. Instale as dependências:
@@ -31,7 +31,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
     ```
     ou, se você estiver usando Yarn:
     ```sh
-    yarn
+    yarn i
     ```
 
 ## Execução
@@ -63,19 +63,6 @@ yarn build
 ```
 
 Os arquivos compilados estarão na pasta dist.
-
-## Servir a Build
-Para servir a build compilada localmente, você pode usar o comando:
-
-```sh
-npm run serve
-```
-
-ou, se você estiver usando Yarn:
-
-```sh
-yarn serve
-```
 
 ## Estrutura do Projeto
 
